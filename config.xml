@@ -7,7 +7,7 @@
     <author email="leebhebhe002@gmail.com" href="lindabhebheblog@wordpress.com">
         Apache Cordova Team
     </author>
-    <content src="index.html" />
+    <content src="stationery.php" />
 
     <access origin="*" />
     <allow-intent href="http://*/*" />

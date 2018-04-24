@@ -24,6 +24,25 @@ catch(exception $e)
     return $conn;
 }
 
+
+
+function loadstationery() {
+  echo "in the load stationery function";
+    $con= getdb();
+    $Sql ="Select * from stationery";
+    $result = mysqli_query($con, $Sql); 
+
+
+    if (mysqli_num_rows($result)>0 ) {
+       while($row = mysqli_fetch_assoc($result)){  
+            echo "<option value=".$row['item_name']. "></option>";
+        }
+    }
+}
+
+
+
+
  function loadEquipment($item) {
   echo "in the load equipment function";
     $con= getdb();
@@ -163,6 +182,107 @@ mysqli_close($con);
  else {
      echo "you have no records";
 }
+}
+
+
+function getStationeryStatus(){
+  // $user = $_SESSION['username'];
+   $user = "Bhebhe";
+   $count = 0;
+
+    $con = getdb();
+
+    $Sql = "SELECT * FROM stationery_out where request_by = '$user' and request_status = 'pending'";
+    $result = mysqli_query($con, $Sql);  
+
+   
+    if (mysqli_num_rows($result)>0 ) {
+
+        echo "<div class='table-responsive'>
+              <table id='myTable' class='table table-striped table-bordered'>
+                          <thead>
+                          <th>  </th>
+                          <th>Date</th>
+                          <th>Status</th>
+                           <th>Approver</th>
+                          <th>Approved</th>
+                        
+                        </tr></thead><tbody>";
+    
+ 
+           echo "<tbody>";  
+            while($row = mysqli_fetch_assoc($result)){  
+            $count  = $count + 1; 
+            echo "<tr>
+                   <td>" . $count .
+              "</td><td>" . $row['request_date'] .
+              "</td><td>" . $row['request_status'] .
+               "</td><td>" . $row['approver'] .
+              "</td><td>" . $row['approval_status'] .
+              "</td>";
+            
+
+}
+echo "</tbody>";
+mysqli_close($con);                         
+     echo "</table></div>";
+     
+}
+ else {
+     echo "you have no records";
+}
+
+
+
+}
+
+function getUserStationeryStatus(){
+   // $user = $_SESSION['username'];
+   $user = "Bhebhe";
+   $count = 0;
+
+    $con = getdb();
+
+    $Sql = "SELECT * FROM stationery_out where request_by = '$user'";
+    $result = mysqli_query($con, $Sql);  
+
+   
+    if (mysqli_num_rows($result)>0 ) {
+
+        echo "<div class='table-responsive'>
+              <table id='myTable' class='table table-striped table-bordered'>
+                          <thead>
+                          <th>  </th>
+                          <th>Date</th>
+                          <th>Status</th>
+                           <th>Approver</th>
+                          <th>Approved</th>
+                        
+                        </tr></thead><tbody>";
+    
+ 
+           echo "<tbody>";  
+            while($row = mysqli_fetch_assoc($result)){  
+            $count  = $count + 1; 
+            echo "<tr>
+                   <td>" . $count .
+              "</td><td>" . $row['request_date'] .
+              "</td><td>" . $row['request_status'] .
+               "</td><td>" . $row['approver'] .
+              "</td><td>" . $row['approval_status'] .
+              "</td>";
+            
+
+}
+echo "</tbody>";
+mysqli_close($con);                         
+     echo "</table></div>";
+     
+}
+ else {
+     echo "you have no records";
+}
+
 }
 
 

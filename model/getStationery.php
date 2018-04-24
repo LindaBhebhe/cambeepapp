@@ -17,6 +17,7 @@ if(isset($_REQUEST['item'])){
     $date  = date('Y/m/d H:i:s');
     $item = $_REQUEST['item'];
     $quantity = $_REQUEST['quantity'];
+    $approver = $_REQUEST['approver'];
     $status ="pending";
    
 
@@ -30,7 +31,7 @@ if(isset($_REQUEST['item'])){
           $item_id = $row['id'];
          
 
-      $sql = "INSERT INTO stationery_out(item_id, request_date, quantity, request_by, collection_by) VALUES ('$item_id','$date','$quantity','$user','$user')";
+      $sql = "INSERT INTO stationery_out(item_id, request_date, quantity, request_by, collection_by, approver,approval_status, request_status) VALUES ('$item_id','$date','$quantity','$user','$user','$approver','no','sent')";
       $result = mysqli_query($con, $sql);  
 
 
@@ -40,5 +41,7 @@ if(isset($_REQUEST['item'])){
    }
   }
  }
+
+
  ?>
 

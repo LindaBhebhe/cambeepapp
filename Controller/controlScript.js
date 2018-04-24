@@ -1,36 +1,5 @@
 
 
-
-
-function removeRow($id){
- alert("in the clear function");
- alert($id);
- if (window.XMLHttpRequest) {
-				xhttp = new XMLHttpRequest();
-				} else {
-			
-				xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-			}
-			xhttp.onreadystatechange = function() {
-                 console.log("in the on readyState");
-				if (this.readyState == 4 && this.status == 200) {				
-					if (this.responseText == "successful"){
-						alert("updated");
-                      
-                     }
-                    
-                }
-        };
-          	  
-		  xhttp.open("GET", "1, true);		  
-		  xhttp.send();
-		}
-  
-
-
-
-//*****************************login**************************
-//function to validate the login
 function validateloginjs(){
 
 	//get username input and error message 
@@ -72,6 +41,7 @@ function validateloginjs(){
 	
     //}
 }
+
 function loginAsUser(){
 	
 	
@@ -293,37 +263,55 @@ function requestEquipment(){
 
 //*******************************************Stationery*************************************************************
 
-	function validateStationeryForm(){
-	
-	//console.log("in the validate method");
 
-	//get username input and error message 
+
+	function validateStationeryForm(){
+		alert("in the validate stationery");
+
+
+
 	var item = document.getElementById('item');
-	//var item_error = document.getElementById("item_error");
+	//var item = document.getElementById("item").options[document.getElementById("item").selectedIndex].value;
+
     var checked = true;
 
     //get password input and error message
 	var quantity = document.getElementById('quantity');	
-	//var quantity_error = document.getElementById("quantity_error");
 
+	var approver = document.getElementById('approver');	
 
+	var date = document.getElementById('date');	
+	
 	//check if the username input is empty
-	if(item.value === "")
+	if(item === '')
 	{    
+
 		 checked = false;
-	    item_error.innerHTML = "select Item";
+	    //item_error.innerHTML = "select Item";
 	}
 
 	
-	if (quantity.value === "")
+	if (quantity === '')
 	{
 		 checked = false;
-         request_error.innerHTML = "Enter quantity";
+        // request_error.innerHTML = "Enter quantity";
+	}
+
+	if (approver === '')
+	{
+		 checked = false;
+         //request_error.innerHTML = "Select approver";
+	}
+
+	if (date=== '')
+	{
+		 checked = false;
+         //request_error.innerHTML = "Select collection date";
 	}
 
 	if (checked ==true){
-	    requestStationery();
-		return true;
+	   requestStationery();
+		//return true;
 	}else{
 		return false;
 	}
@@ -331,10 +319,19 @@ function requestEquipment(){
 
 
 function requestStationery(){
-	alert("successfully requested");
-    var item = document.getElementById('item');
 
-	var quantity = document.getElementById('quantity');	
+    var item = document.getElementById('item').value;
+    	alert("requesting item" + item );
+
+	var quantity = document.getElementById('quantity').value;	
+	    alert("requesting quantity" + quantity);
+
+
+	var approver = document.getElementById('approver').value;
+	alert("requesting approver" + approver );	
+
+	var date = document.getElementById('dt').value;
+	alert("requesting date" + date);	
 	
 	if (window.XMLHttpRequest) {
 				xhttp = new XMLHttpRequest();
@@ -347,7 +344,7 @@ function requestStationery(){
 				if (this.readyState == 4 && this.status == 200) {				
 					if (this.responseText == "successful"){
 						alert("Request Successful");
-                        window.location.href = "login.php";
+                       
                      }
                     
                 }
@@ -356,11 +353,11 @@ function requestStationery(){
 
           //call the send to the php file on the server 
 		 // xhttp.open("GET", "https://watchmeorg.000webhostapp.com/cambeeplogin.php?username="+usern+"&password="+pass, true);		  
-		  xhttp.open("GET", "http://localhost:81/cambeep/model/getStationery.php?item="+item+"&quantity="+quantity, true);		  
+		  xhttp.open("GET", "http://localhost:81/cambeep/model/getStationery.php?item="+item+"&quantity="+quantity+"&approver="+approver+"&date="+date, true);		  
 		  xhttp.send();
 		}
 		//**************************************************************************************************
 
 
 		//*********************************************Other functions*************************************
-		
+		 

@@ -67,6 +67,13 @@
 </head>
 
 <body>
+
+   <?php
+      include('../model/getStationery.php');                  
+    ?>
+
+    <script type="text/javascript" src="../Controller/controlScript.js"></script>
+    
     <div class="container">
         <div class="center-block">
             <div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-12 col-xs-12 no-padding" style="z-index:1">
@@ -106,14 +113,14 @@
 
                                 <div class="col-lg-10 col-lg-offset-1 col-lg-offset-right-1 col-md-10 col-md-offset-1 col-md-offset-right-1 col-sm-12 col-xs-12 pull-right ">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input class="mdl-textfield__input" type="text" id="emailAddress">
+                                        <input class="mdl-textfield__input" type="text" name="username" id="username">
                                         <label class="mdl-textfield__label" for="emailAddress">Username </label>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-10 col-lg-offset-1 col-lg-offset-right-1 col-md-10 col-md-offset-1 col-md-offset-right-1 col-sm-12 col-xs-12 pull-right ">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input class="mdl-textfield__input" type="password" id="password">
+                                        <input class="mdl-textfield__input" type="password" name = "password" id="password">
                                         <label class="mdl-textfield__label" for="password">Password</label>
                                     </div>
                                 </div>
@@ -135,7 +142,7 @@
                                 </div>
 
                                 <div class="col-lg-10 col-lg-offset-1 col-lg-offset-right-1 col-md-10 col-md-offset-1 col-md-offset-right-1 col-sm-12 col-xs-12 pull-right ">
-                                    <button class="btn lt-register-btn">login <i class="icon-right "></i></button>
+                                    <button class="btn lt-register-btn" id="submit" onclick="return validateLoginForm()">login <i class="icon-right "></i></button>
                                 </div>
                             </form>
 

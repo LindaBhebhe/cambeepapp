@@ -266,7 +266,7 @@ function requestEquipment(){
 
 
 	function validateStationeryForm(){
-		alert("in the validate stationery");
+		//alert("in the validate stationery");
 
 
 
@@ -321,17 +321,18 @@ function requestEquipment(){
 function requestStationery(){
 
     var item = document.getElementById('item').value;
-    	alert("requesting item" + item );
+    	//alert("requesting item" + item );
 
 	var quantity = document.getElementById('quantity').value;	
-	    alert("requesting quantity" + quantity);
+	   // alert("requesting quantity" + quantity);
 
 
 	var approver = document.getElementById('approver').value;
-	alert("requesting approver" + approver);	
+	//alert("requesting approver" + approver);	
 
 	var date = document.getElementById('dt').value;
-	alert("requesting date" + date);	
+	//alert("requesting date" + date);	
+	alert("Request successfully sent");
 	
 	if (window.XMLHttpRequest) {
 				xhttp = new XMLHttpRequest();
@@ -350,14 +351,51 @@ function requestStationery(){
                 }
         };
           
-
+        
           //call the send to the php file on the server 
 		 // xhttp.open("GET", "https://watchmeorg.000webhostapp.com/cambeeplogin.php?username="+usern+"&password="+pass, true);		  
 		  xhttp.open("GET", "http://localhost:81/cambeep/model/getStationery.php?item="+item+"&quantity="+quantity+"&approver="+approver+"&date="+date, true);		  
 		  xhttp.send();
+
 		}
 		//**************************************************************************************************
 
 
 		//*********************************************Other functions*************************************
-		 
+	 function validateLoginForm(){
+
+	 	alert("in the validate login form");
+
+          var name = document.getElementById('username').value;
+    	//alert("requesting item" + item );
+
+	     var password = document.getElementById('password').value;	
+	   // alert("requesting quantity" + quantity);
+
+
+	   if (window.XMLHttpRequest) {
+				xhttp = new XMLHttpRequest();
+				} else {
+			
+				xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xhttp.onreadystatechange = function() {
+                 console.log("in the on readyState");
+				if (this.readyState == 4 && this.status == 200) {				
+					if (this.responseText == "successful"){
+						alert("Request Successful");
+                       
+                     }
+                    
+                }
+        };
+          
+        
+          //call the send to the php file on the server 
+		 // xhttp.open("GET", "https://watchmeorg.000webhostapp.com/cambeeplogin.php?username="+usern+"&password="+pass, true);		  
+		  xhttp.open("GET", "http://localhost:81/cambeep/model/processLogin.php?name="+name+"&password="+password, true);		  
+		  xhttp.send();
+
+		}
+
+	 }

@@ -143,7 +143,9 @@
                                         <span class="form-control-feedback" aria-hidden="true" id="fname1"></span> -->
 
                                         <label>Item name</label>
-                              <select id="item" name="item " required>
+                              <select id="item" name="item " style=" max-width: 350px;
+    min-width: 350px;
+    width: 350px !important;" required>
                                 
                                <?php
             
@@ -170,9 +172,12 @@
                                         <label class="mdl-textfield__label " for="fullName ">Full Name</label>
                                     </div>-->
 
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
-                                        <input class="form-control " type="number" name = "quantity" id="quantity" size="35">
-                                        <label class="mdl-textfield__label " for="emailAddress ">quantity</label>
+                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-group has-feedback">
+                                     <label>Quantity</label>
+                                        <input type="number" name ="quantity" id="quantity"  style=" max-width: 370px;
+                                            min-width: 370px;
+                                            width: 370px !important;" >
+                                        
                                     </div>
 
 
@@ -185,7 +190,10 @@
                                         <span class="form-control-feedback" aria-hidden="true" id="fname1"></span> -->
 
                                         <label>Approver</label>
-                              <select id="approver" name="approver " required>
+                              <select id="approver" name="approver " style=" max-width: 360px;
+    min-width: 360px;
+    width: 360px !important;" 
+                              required>
                                 
                                <?php
             
@@ -216,7 +224,7 @@
                                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-group has-feedback">
 
                                      collect on:
-                                        <input class="mdl-textfield__input " input type="date" name="dt" id="dt"> 
+                                        <input class="mdl-textfield__input " input type="date" name="dt" id="dt"  > 
                                      
                                     </div>
 
@@ -225,14 +233,47 @@
                             </form>
                             <!--register form-->
                         </div>
-                        <div class="tab-pane fade" id="login">
+                      
+                         <div class="tab-pane fade" id="login">
+                            <!--login form-->
+                           <?php
+                            Require('../model/supportFunctions.php');
+                         getStationeryStatus();
+                         ?>
+                            <!-- <form>
+
+                                <div class="col-lg-10 col-lg-offset-1 col-lg-offset-right-1 col-md-10 col-md-offset-1 col-md-offset-right-1 col-sm-12 col-xs-12 pull-right ">
+                                    <button class="btn lt-register-btn">Pending requests <i class="icon-right "></i></button>
+                                </div>
+
+                                <div class="col-lg-10 col-lg-offset-1 col-lg-offset-right-1 col-md-10 col-md-offset-1 col-md-offset-right-1 col-sm-12 col-xs-12 pull-right ">
+                                    <button class="btn lt-register-btn">All Requests <i class="icon-right "></i></button>
+                                </div>
+                            </form> -->
+                            <!--login form-->
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                       
                           
                                                                    <!-- Modal -->
-                <div class="modal fade" id="myModal" role="dialog">
+                <!-- <div class="modal fade" id="myModal" role="dialog">
               <div class="modal-dialog">
         
-          <!-- Modal content-->
+           Modal content
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -247,7 +288,7 @@
           </div>
           
         </div>
-      </div>
+      </div> -->
         <!-- Modal content-->
 
 

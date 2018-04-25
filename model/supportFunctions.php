@@ -229,7 +229,7 @@ mysqli_close($con);
      
 }
  else {
-     echo "you have no records";
+     echo "You have no pending requests";
 }
 
 

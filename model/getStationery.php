@@ -19,6 +19,7 @@ if(isset($_REQUEST['item'])){
     $quantity = $_REQUEST['quantity'];
     $approver = $_REQUEST['approver'];
     $status ="pending";
+    $date2 = $_REQUEST['date'];
    
 
     $sql2 = "SELECT * FROM stationery WHERE item_name LIKE '%$item%'";
@@ -31,7 +32,7 @@ if(isset($_REQUEST['item'])){
           $item_id = $row['id'];
          
 
-      $sql = "INSERT INTO stationery_out(item_id, request_date, quantity, request_by, collection_by, approver,approval_status, request_status) VALUES ('$item_id','$date','$quantity','$user','$user','$approver','no','sent')";
+      $sql = "INSERT INTO stationery_out(item_id, request_date, quantity, request_by, collection_by, collection_date, approver,approval_status, request_status) VALUES ('$item_id','$date','$quantity','$user','$user','$date2','$approver','no','sent')";
       $result = mysqli_query($con, $sql);  
 
 

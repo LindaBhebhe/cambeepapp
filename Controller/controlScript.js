@@ -328,7 +328,7 @@ function requestStationery(){
 
 
 	var approver = document.getElementById('approver').value;
-	alert("requesting approver" + approver );	
+	alert("requesting approver" + approver);	
 
 	var date = document.getElementById('dt').value;
 	alert("requesting date" + date);	

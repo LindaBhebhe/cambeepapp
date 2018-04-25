@@ -3,7 +3,6 @@
 <?php
 
 header("Access-Control-Allow-Origin: *");
-echo "in the sendEquip php file";
 
 if(isset($_REQUEST['item'])){
   echo "in the getstationery";
@@ -23,10 +22,11 @@ if(isset($_REQUEST['item'])){
     echo "approver ".$approver;
     $status ="pending";
     $date2 = $_REQUEST['date'];
+    echo $date2 ;
    
 
     $sql2 = "SELECT * FROM stationery WHERE item_name LIKE '%$item%'";
-    //$sql2 = "SELECT * FROM stationery";
+   
     $result2 = mysqli_query($con, $sql2);
 
     if($result2){
@@ -47,5 +47,9 @@ if(isset($_REQUEST['item'])){
  }
 
 
+  $con= mysqli_connect("localhost","root","","cambeep");
+  $sql = "INSERT INTO stationery_out(item_id, request_date, quantity, request_by, collection_by, collection_date, approver,approval_status, request_status) VALUES ('10','3/3/5','20','bhebhe','bhebhe','2/8/8','anythin','no','sent')";
+      $result = mysqli_query($con, $sql);  
+      var_dump( $result);
  ?>
 

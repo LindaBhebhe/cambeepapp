@@ -23,7 +23,7 @@ Require('supportFunctions.php');
                     <tr>
             <th>
               <span class='custom-checkbox'>
-                <input type='checkbox' id='selectAll'>s
+                <input type='checkbox' id='selectAll'>
                 <label for='selectAll'></label>
               </span>
             </th>

@@ -354,7 +354,7 @@ function requestStationery(){
         
           //call the send to the php file on the server 
 		 // xhttp.open("GET", "https://watchmeorg.000webhostapp.com/cambeeplogin.php?username="+usern+"&password="+pass, true);		  
-		  xhttp.open("GET", "http://localhost:81/cambeep/model/getStationery.php?item="+item+"&quantity="+quantity+"&approver="+approver+"&date="+date, true);		  
+		  xhttp.open("GET", "http://localhost:81/App/model/getStationery.php?item="+item+"&quantity="+quantity+"&approver="+approver+"&date="+date, true);		  
 		  xhttp.send();
 
 		}

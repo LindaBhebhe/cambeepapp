@@ -1,8 +1,5 @@
 
-<?php 
 
-if(session_status()!=PHP_SESSION_ACTIVE) session_start();
- ?>
 
 <script type="text/javascript" src="../Controller/controlScript.js"></script> 
 <?php
@@ -161,8 +158,17 @@ function get_all_stationery_requests(){
               "</td><td>" . $row['quantity'] .
               "</td><td>" . $row['collection_by'] .
               "</td>
-              <td>"
-              ?>
+              <td>";
+
+               echo'
+           
+                            <a class="edit" onclick="getUpdateId(this.id)" id="'.$row['id'].'" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+
+                            <a class="delete" onclick="getId(this.id)" id="'.$row['id'].'"data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                        </td>
+                    </tr>';
+
+             /* ?>
 
               <form name="rem" method="GET" action = "rem.php">
                <input  name="rem" id="rem" type="text" tabindex="1"  required>
@@ -174,9 +180,9 @@ function get_all_stationery_requests(){
                  ?>
 
                 <form name="clear" method="GET" action = "clear.php">
-               <button name="clear" type="submit" id="clearBtn" onclick="clear()" >Clear</button> 
+               <button name="clear" type="submit" id="'.$row['id'].' onclick="clear()" >Clear</button> 
                </form>
-               <?php  
+               <?php */ 
                 echo "</td>";
 
 }

@@ -120,6 +120,7 @@ if(session_status()!=PHP_SESSION_ACTIVE) session_start();
                         <div class="tab-pane fade in active" id="register">
 
                          <?php
+                         
                             Include('../model/approvals.php');
                         
                          ?>

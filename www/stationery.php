@@ -1,4 +1,9 @@
 <!doctype HTML>
+<?php 
+
+if(session_status()!=PHP_SESSION_ACTIVE) session_start();
+ ?>
+ 
 <html>
 
 <head>

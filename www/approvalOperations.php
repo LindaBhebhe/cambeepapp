@@ -1,4 +1,11 @@
+
+
 <!doctype HTML>
+<?php 
+
+if(session_status()!=PHP_SESSION_ACTIVE) session_start();
+ ?>
+
 <html>
 
 <head>
@@ -68,12 +75,10 @@
 
 <body>
 
-   <?php
-     // include('../model/processLogin.php');                  
-    ?>
+
 
     <script type="text/javascript" src="../Controller/controlScript.js"></script>
-    
+
     <div class="container">
         <div class="center-block">
             <div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-12 col-xs-12 no-padding" style="z-index:1">
@@ -82,16 +87,25 @@
                 <div class="mlt-carousel">
                     <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
                         <div class="carousel-inner" role="listbox">
-                            <div class="item active" >
-                                <img class="img-responsive center-block" src="img/bell.jpg" alt="step1" style="border-radius: 50%; margin-top: 150px" height="150" width="150" >
-                                <div class="item-content">
-                                  <h3>Beep</h3>
-
-                                </div>
+                            <div class="item active">
+                                <img class="img-responsive center-block" src="img/stationery.jpg" alt="step1" style="border-radius: 50%; margin-top: 150px" height="150" width="150">
+                              
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive center-block" src="img/bell.jpg" alt="step1" style="border-radius: 50%; margin-top: 150px" height="150" width="150">
+                               
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive center-block" src="img/stationery.jpg" alt="step1" style="border-radius: 50%; margin-top: 150px" height="150" width="150">
+                                
                             </div>
                         </div>
                         <!-- Indicators -->
-                      
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
                     </div>
                     <!--mlt-carousel-->
                 </div>
@@ -101,56 +115,18 @@
 
             <div class="col-lg-6 col-lg-offset-right-1 col-md-6 col-md-offset-right-1 col-sm-12 col-xs-12 no-padding">
                 <div class="mlt-content">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a href="#register" data-toggle="tab">Login</a></li>
-                        
-                    </ul>
+                   
                     <div id="myTabContent" class="tab-content">
-                        <div class="tab-pane fade in active" id="login">
-                          
-                            <!--login form-->
-                            <form>
+                        <div class="tab-pane fade in active" id="register">
 
-                                <div class="col-lg-10 col-lg-offset-1 col-lg-offset-right-1 col-md-10 col-md-offset-1 col-md-offset-right-1 col-sm-12 col-xs-12 pull-right ">
-                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-group has-feedback">
-                                        <input class="mdl-textfield__input" type="text" name="username" id="username">
-                                        <label class="mdl-textfield__label" for="emailAddress">Username </label>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-10 col-lg-offset-1 col-lg-offset-right-1 col-md-10 col-md-offset-1 col-md-offset-right-1 col-sm-12 col-xs-12 pull-right ">
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input class="mdl-textfield__input" type="password" name = "password" id="password">
-                                        <label class="mdl-textfield__label" for="password">Password</label>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-10 col-lg-offset-1 col-lg-offset-right-1 col-md-10 col-md-offset-1 col-md-offset-right-1 col-sm-12 col-xs-12 pull-right ">
-                                    <div class="row">
-                                        <br>
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="rememberPass">
-                                        <input type="checkbox" id="rememberPass" class="mdl-switch__input">
-                                        <span class="mdl-switch__label">Remember</span>
-                                        </label>
-
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style=" text-align:right;">
-                                            <a href="#">Reset Password</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-10 col-lg-offset-1 col-lg-offset-right-1 col-md-10 col-md-offset-1 col-md-offset-right-1 col-sm-12 col-xs-12 pull-right ">
-                                    <button class="btn lt-register-btn" id="submit" onclick="return validateLoginForm()">login <i class="icon-right "></i></button>
-                                </div>
-                                
-                            </form>
-
-                            
-                            <!--login form-->
-                        </div>
+                         <?php
+                            Include('../model/approvals.php');
+                        
+                         ?>
                        
+                        </div>
+                      
+                        </div>
                     </div>
                 </div>
                 <!--Login-->

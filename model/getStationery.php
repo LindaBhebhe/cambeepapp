@@ -47,9 +47,9 @@ if(isset($_REQUEST['item'])){
  }
 
 
-  $con= mysqli_connect("localhost","root","","cambeep");
+/*  $con= mysqli_connect("localhost","root","","cambeep");
   $sql = "INSERT INTO stationery_out(item_id, request_date, quantity, request_by, collection_by, collection_date, approver,approval_status, request_status) VALUES ('10','3/3/5','20','bhebhe','bhebhe','2/8/8','anythin','no','sent')";
       $result = mysqli_query($con, $sql);  
-      var_dump( $result);
+      var_dump( $result);*/
  ?>
 

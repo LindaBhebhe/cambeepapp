@@ -3,7 +3,8 @@
 Require('supportFunctions.php');
 
 //function load_stationery_table(){
-     session_start();
+
+   // session_start();
     $user = $_SESSION['username'];
     echo  $user;
   
@@ -27,11 +28,10 @@ Require('supportFunctions.php');
                 <label for='selectAll'></label>
               </span>
             </th>
-                        <th>Name</th>
+                        <th>Request By</th>
                         <th>Quantity</th>
-                        <th>Date in</th>
-                        <th>Received By</th>
-                        <th>Actions</th>
+                        <th>Collection Date</th>
+                        <th>Approve?</th>
                     </tr>
                 </thead><tbody>";
 
@@ -40,17 +40,9 @@ Require('supportFunctions.php');
 
            echo" <tr>
 
-            <td>
-              <span class='custom-checkbox'>
-                <input type='checkbox' id='checkbox1' name='options[]' value='1'>
-                <label for='checkbox1'></label>
-              </span>
-            </td>
-
-                        <td>".$row['item_name'].
+                        <td>".$row['request_by'].
                         "</td><td>".$row['quantity'].
-                        "</td><td>".$row['date_in'].
-                        "</td><td>".$row['received_by'].
+                        "</td><td>".$row['collection_date'].
                         "</td><td>";
 
                         echo'

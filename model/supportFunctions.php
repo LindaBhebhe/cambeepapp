@@ -1,3 +1,9 @@
+
+<?php 
+
+if(session_status()!=PHP_SESSION_ACTIVE) session_start();
+ ?>
+
 <script type="text/javascript" src="../Controller/controlScript.js"></script> 
 <?php
 //header("Access-Control-Allow-Origin: *");
@@ -186,13 +192,13 @@ mysqli_close($con);
 
 
 function getStationeryStatus(){
-  // $user = $_SESSION['username'];
-   $user = "Bhebhe";
+   $user = $_SESSION['username'];
+  // $user = "Bhebhe";
    $count = 0;
 
     $con = getdb();
 
-    $Sql = "SELECT * FROM stationery_out where request_by = '$user' and request_status = 'pending'";
+    $Sql = "SELECT * FROM stationery_out where request_by = '$user' and request_status = 'sent'";
     $result = mysqli_query($con, $Sql);  
 
    

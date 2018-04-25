@@ -3,13 +3,15 @@
 <?php
 
 header("Access-Control-Allow-Origin: *");
-//echo "in the sendEquip php file";
+echo "in the sendEquip php file";
 
 if(isset($_REQUEST['item'])){
+  echo "in the getstationery";
 
    $con= mysqli_connect("localhost","root","","cambeep");
 
     if($con){ 
+      echo "in the get Stationery";
    
    // session_start();
    // $user = $_SESSION['username'];
@@ -18,6 +20,7 @@ if(isset($_REQUEST['item'])){
     $item = $_REQUEST['item'];
     $quantity = $_REQUEST['quantity'];
     $approver = $_REQUEST['approver'];
+    echo "approver ".$approver;
     $status ="pending";
     $date2 = $_REQUEST['date'];
    

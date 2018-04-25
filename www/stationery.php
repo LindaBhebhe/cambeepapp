@@ -69,9 +69,9 @@
 <body>
 
 
-    <?php
-      include('../model/getStationery.php');                  
-    ?>
+   <!--  <?php
+      //Require('../model/getStationery.php');                  
+    ?> -->
 
     <script type="text/javascript" src="../Controller/controlScript.js"></script>
 
@@ -174,6 +174,7 @@
 
                                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-group has-feedback">
                                      <label>Quantity</label>
+                                     
                                         <input type="number" name ="quantity" id="quantity"  style=" max-width: 370px;
                                             min-width: 370px;
                                             width: 370px !important;" >
